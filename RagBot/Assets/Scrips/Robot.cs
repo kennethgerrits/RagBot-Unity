@@ -35,9 +35,9 @@ public class Robot : MonoBehaviour
         _lineRenderer.SetPosition(1, _initialPosition);
 
         if (transform.position.y > 10 ||
-            transform.position.y < -10 ||
+            transform.position.y < -20 ||
             transform.position.x > 30 ||
-            transform.position.x < -10)
+            transform.position.x < -20)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentSceneName);
