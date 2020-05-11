@@ -10,12 +10,12 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         bool death = collision.collider.GetComponent<Robot>() != null;
+        Robot robot = collision.collider.GetComponent<Robot>();
 
         if (death)
         {
             Instantiate(_cloudPoofPrefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            //restartStage();
+            Destroy(robot);
         }
     }
 

@@ -12,9 +12,11 @@ public class Robot : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _robotWasLaunched;
 
+    public bool isGrounded;
+
 
     [SerializeField] private float _launchPower = 250;
-    [SerializeField] private float _jumpPower = 5f;
+    [SerializeField] private int _jumpPower = 2;
     [SerializeField] private float _moveSpeed = 5f;
 
     // Init functions
@@ -45,20 +47,18 @@ public class Robot : MonoBehaviour
             restartStage();
         }
 
-        if (_robotWasLaunched)
-        {
-            Jump();
-            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-            transform.position += movement * Time.deltaTime * _moveSpeed;
-        }
-
+        handleRobotMovement();
     }
 
-    private void Jump()
+    private void handleRobotMovement()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (_robotWasLaunched)
         {
-            _rigidBody2D.AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+            transform.position += movement * Time.deltaTime * _moveSpeed;
+
+            Vector3 movementV = new Vector3(0f, Input.GetAxis("Vertical") * _jumpPower, 0f);
+            transform.position += movementV * Time.deltaTime * _moveSpeed;
         }
     }
 
