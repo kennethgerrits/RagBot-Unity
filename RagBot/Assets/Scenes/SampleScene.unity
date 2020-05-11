@@ -229,6 +229,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30.719997, y: 2.0893402}
   m_EdgeRadius: 0
+--- !u!1 &513076460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7365307799929172330, guid: 81e544bece7514c4493bdd8e885c6e96,
+    type: 3}
+  m_PrefabInstance: {fileID: 7365307800305917318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &513076465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513076460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b515325868a1934ab415372c7e28627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.06, y: -2.205, z: -12}
+  m_LocalPosition: {x: 10.059999, y: -2.205, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -727,6 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363675627}
   - component: {fileID: 1363675626}
+  - component: {fileID: 1363675628}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -777,13 +796,30 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363675625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.06, y: -2.205, z: -12}
+  m_LocalPosition: {x: 10.059999, y: -2.205, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 877072063}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1363675628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363675625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 0
+  m_BoundingVolume: {fileID: 0}
+  m_BoundingShape2D: {fileID: 485129489}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
 --- !u!1 &1447793562
 GameObject:
   m_ObjectHideFlags: 0

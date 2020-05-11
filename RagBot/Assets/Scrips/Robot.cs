@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -39,8 +40,19 @@ public class Robot : MonoBehaviour
             transform.position.x > 30 ||
             transform.position.x < -20)
         {
-            string currentSceneName = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentSceneName);
+            restartStage();
+        }
+    }
+
+    //collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        bool death = collision.collider.GetComponent<Enemy>() != null;
+
+        if (death)
+        {
+            MyDelay(2);
+            restartStage();
         }
     }
 
@@ -67,6 +79,20 @@ public class Robot : MonoBehaviour
     {
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y, 0);
+    }
+
+    private void restartStage()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
+
+    }
+
+    public void MyDelay(int seconds)
+    {
+        DateTime dt = DateTime.Now + TimeSpan.FromSeconds(seconds);
+
+        do { } while (DateTime.Now < dt);
     }
 
 }
