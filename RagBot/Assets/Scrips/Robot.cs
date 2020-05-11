@@ -14,6 +14,8 @@ public class Robot : MonoBehaviour
 
 
     [SerializeField] private float _launchPower = 250;
+    [SerializeField] private float _jumpPower = 5f;
+    [SerializeField] private float _moveSpeed = 5f;
 
     // Init functions
     private void Awake()
@@ -32,7 +34,6 @@ public class Robot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         _lineRenderer.SetPosition(0, transform.position);
         _lineRenderer.SetPosition(1, _initialPosition);
 
@@ -42,6 +43,22 @@ public class Robot : MonoBehaviour
             transform.position.x < -20)
         {
             restartStage();
+        }
+
+        if (_robotWasLaunched)
+        {
+            Jump();
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+            transform.position += movement * Time.deltaTime * _moveSpeed;
+        }
+
+    }
+
+    private void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            _rigidBody2D.AddForce(new Vector2(0f, 5f), ForceMode2D.Impulse);
         }
     }
 
