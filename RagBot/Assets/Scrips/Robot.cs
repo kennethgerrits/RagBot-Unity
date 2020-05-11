@@ -66,40 +66,38 @@ public class Robot : MonoBehaviour
     private void OnMouseDown()
     {
         _spriteRenderer.color = Color.red;
+
+        if (_robotWasLaunched)
+            return;
         _lineRenderer.enabled = true;
     }
 
     private void OnMouseUp()
     {
         _spriteRenderer.color = Color.white;
+        _lineRenderer.enabled = false;
 
+        if (_robotWasLaunched)
+            return;
         Vector2 directionToInitialPosition = _initialPosition - transform.position;
         _rigidBody2D.AddForce(directionToInitialPosition * _launchPower);
         _rigidBody2D.gravityScale = 1;
         _robotWasLaunched = true;
 
-        _lineRenderer.enabled = false;
     }
 
     private void OnMouseDrag()
     {
+        if (_robotWasLaunched)
+            return;
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y, 0);
     }
 
     private void restartStage()
     {
-
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
-
-    }
-
-    public void MyDelay(int seconds)
-    {
-        DateTime dt = DateTime.Now + TimeSpan.FromSeconds(seconds);
-
-        do { } while (DateTime.Now < dt);
     }
 
 }
