@@ -12,6 +12,7 @@ public class Robot : MonoBehaviour
     private LineRenderer _lineRenderer;
     private bool _robotWasLaunched;
 
+
     [SerializeField] private float _launchPower = 250;
 
     // Init functions
@@ -44,18 +45,6 @@ public class Robot : MonoBehaviour
         }
     }
 
-    //collision
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        bool death = collision.collider.GetComponent<Enemy>() != null;
-
-        if (death)
-        {
-            MyDelay(2);
-            restartStage();
-        }
-    }
-
     // Mouse interaction
     private void OnMouseDown()
     {
@@ -83,6 +72,7 @@ public class Robot : MonoBehaviour
 
     private void restartStage()
     {
+
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
 
