@@ -1197,15 +1197,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dangerous Ufo
       objectReference: {fileID: 0}
+    - target: {fileID: 8330425848691392788, guid: 116d98267141a374990b4f12535bcf1a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.21
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.48
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}
