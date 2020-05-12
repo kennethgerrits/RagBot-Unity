@@ -11,13 +11,12 @@ public class Robot : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private LineRenderer _lineRenderer;
     private bool _robotWasLaunched;
-
-    public bool isGrounded;
-
+    private LevelController _levelController;
 
     [SerializeField] private float _launchPower = 250;
     [SerializeField] private int _jumpPower = 2;
     [SerializeField] private float _moveSpeed = 5f;
+
 
     // Init functions
     private void Awake()
@@ -25,6 +24,7 @@ public class Robot : MonoBehaviour
         _rigidBody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _lineRenderer = GetComponent<LineRenderer>();
+        _levelController = GameObject.FindObjectOfType<LevelController>() as LevelController;
         _initialPosition = transform.position;
     }
 
@@ -44,7 +44,7 @@ public class Robot : MonoBehaviour
             transform.position.x > 30 ||
             transform.position.x < -20)
         {
-            restartStage();
+            _levelController.RestartLevel();
         }
 
         handleRobotMovement();
@@ -92,12 +92,6 @@ public class Robot : MonoBehaviour
             return;
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y, 0);
-    }
-
-    private void restartStage()
-    {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
     }
 
 }

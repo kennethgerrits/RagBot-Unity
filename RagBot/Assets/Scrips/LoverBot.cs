@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoverBot : MonoBehaviour
 {
-    private static int _nextLevelIndex = 1;
+    private LevelController _levelController;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,9 +13,7 @@ public class LoverBot : MonoBehaviour
 
         if(foundLover)
         {
-            _nextLevelIndex++;
-            string nextLevelName = "Level" + _nextLevelIndex;
-            SceneManager.LoadScene(nextLevelName);
+            _levelController.LoadNextLevel();
         }
     }
 
@@ -23,7 +21,7 @@ public class LoverBot : MonoBehaviour
     // Init functions
     private void Awake()
     {
-
+        _levelController = GameObject.FindObjectOfType<LevelController>() as LevelController;
     }
 
     void Start()
