@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         if (death)
         {
             Instantiate(_cloudPoofPrefab, transform.position, Quaternion.identity);
-            Instantiate(_gameoverPrefab, new Vector3(12, 7, 0), Quaternion.identity);
+            Instantiate(_gameoverPrefab, new Vector3(12, 7, -4), Quaternion.identity);
             robot.gameObject.SetActive(false);
         }
     }
