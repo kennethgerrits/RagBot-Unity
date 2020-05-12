@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3940375661367219642}
   - component: {fileID: 3940375661367219643}
-  - component: {fileID: 3940375661367219640}
   - component: {fileID: 3940375661367219621}
   - component: {fileID: 3940375661367219620}
   m_Layer: 0
@@ -84,27 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3940375661367219640
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3940375661367219641}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10000
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &3940375661367219621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,4 +123,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cloudPoofPrefab: {fileID: 7089705106114519037, guid: 0397cc8262fa82c48ad250288c300b9f,
     type: 3}
-  _gameover: {fileID: 0}
+  _gameover: {fileID: 5095257761426176435, guid: 43e69260139131f49a29ff84cb2f903b,
+    type: 3}
