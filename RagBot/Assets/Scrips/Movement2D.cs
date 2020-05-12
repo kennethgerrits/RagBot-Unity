@@ -11,15 +11,12 @@ public class Movement2D : MonoBehaviour
     [SerializeField] private float _jumpPower = 6f;
     [SerializeField] private float _moveSpeed = 5f;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         _robot = GameObject.FindObjectOfType<Robot>() as Robot;
         _rigidbody2D = transform.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         handleRobotMovement();

@@ -32,9 +32,10 @@ public class Robot : MonoBehaviour
         _lineRenderer.SetPosition(0, transform.position);
         _lineRenderer.SetPosition(1, _initialPosition);
 
-        if (transform.position.y > 10 ||
+        // Resets level once player gets shot into Oblivion.
+        if (transform.position.y > 15 ||
             transform.position.y < -20 ||
-            transform.position.x > 30 ||
+            transform.position.x > 40 ||
             transform.position.x < -20)
         {
             _levelController.RestartLevel();
