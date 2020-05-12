@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject _cloudPoofPrefab;
-    [SerializeField] private GameObject _gameover;
+    [SerializeField] private GameObject _gameoverPrefab;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         if (death)
         {
             Instantiate(_cloudPoofPrefab, transform.position, Quaternion.identity);
-            Instantiate(_gameover, new Vector3(12, 7, 0), Quaternion.identity);
+            Instantiate(_gameoverPrefab, new Vector3(12, 7, 0), Quaternion.identity);
             robot.gameObject.SetActive(false);
         }
     }

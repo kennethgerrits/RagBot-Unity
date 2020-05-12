@@ -52,14 +52,15 @@ public class Robot : MonoBehaviour
 
     private void handleRobotMovement()
     {
-        if (_robotWasLaunched)
-        {
-            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-            transform.position += movement * Time.deltaTime * _moveSpeed;
+        if (!_robotWasLaunched)
+            return;
 
-            Vector3 movementV = new Vector3(0f, Input.GetAxis("Vertical") * _jumpPower, 0f);
-            transform.position += movementV * Time.deltaTime * _moveSpeed;
-        }
+        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        transform.position += movement * Time.deltaTime * _moveSpeed;
+
+        Vector3 movementV = new Vector3(0f, Input.GetAxis("Vertical") * _jumpPower, 0f);
+        transform.position += movementV * Time.deltaTime * _moveSpeed;
+
     }
 
     // Mouse interaction
