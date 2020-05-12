@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private Robot _robot;
     private Vector3 _alignmentTopCenter;
 
     [SerializeField] private GameObject _cloudPoofPrefab;
@@ -16,7 +17,7 @@ public class Enemy : MonoBehaviour
 
         if (death)
         {
-            Instantiate(_cloudPoofPrefab, transform.position, Quaternion.identity);
+            Instantiate(_cloudPoofPrefab, _robot.transform.position, Quaternion.identity);
             Instantiate(_gameoverPrefab, _alignmentTopCenter, Quaternion.identity);
             robot.gameObject.SetActive(false);
         }
@@ -26,5 +27,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _alignmentTopCenter = new Vector3(12, 7, -4);
+        _robot = GameObject.FindObjectOfType<Robot>() as Robot;
     }
 }

@@ -22,7 +22,6 @@ public class LevelController : MonoBehaviour
     {
         _nextLevelIndex++;
         string nextLevelName = _levelNames[_nextLevelIndex];
-        //string nextLevelName = "Level" + _nextLevelIndex;
         SceneManager.LoadScene(nextLevelName);
     }
 

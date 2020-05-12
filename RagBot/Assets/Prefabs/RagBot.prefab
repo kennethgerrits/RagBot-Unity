@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275dfc575d713d04cbe117147a799003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpPower: 2
+  _jumpPower: 6
   _moveSpeed: 5
 --- !u!120 &7427258637679805409
 LineRenderer:
