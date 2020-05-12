@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cloudPoofPrefab: {fileID: 7089705106114519037, guid: 0397cc8262fa82c48ad250288c300b9f,
     type: 3}
+  _gameover: {fileID: 0}
