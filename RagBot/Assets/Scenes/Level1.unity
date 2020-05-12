@@ -1123,6 +1123,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 95981015}
     m_Modifications:
+    - target: {fileID: 5915780419373927337, guid: 9f77861028ba4ab42981c80c0d893dd7,
+        type: 3}
+      propertyPath: _jumpPower
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7427258637679805402, guid: 9f77861028ba4ab42981c80c0d893dd7,
         type: 3}
       propertyPath: m_Name
@@ -1205,12 +1210,12 @@ PrefabInstance:
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11
+      value: 11.19
       objectReference: {fileID: 0}
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.57
+      value: 6.92
       objectReference: {fileID: 0}
     - target: {fileID: 8330425848691392790, guid: 116d98267141a374990b4f12535bcf1a,
         type: 3}

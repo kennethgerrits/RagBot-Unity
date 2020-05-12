@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7427258637679805406}
   - component: {fileID: 7427258637679805407}
   - component: {fileID: 7427258637679805408}
+  - component: {fileID: 5915780419373927337}
   - component: {fileID: 7427258637679805409}
   m_Layer: 0
-  m_Name: Robot
+  m_Name: RagBot
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,8 +165,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fbf9a4b89fe87f49903fb4b3f07c283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGrounded: 0
   _launchPower: 200
+--- !u!114 &5915780419373927337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7427258637679805402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 275dfc575d713d04cbe117147a799003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _jumpPower: 2
   _moveSpeed: 5
 --- !u!120 &7427258637679805409

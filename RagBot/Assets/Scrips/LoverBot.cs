@@ -17,16 +17,10 @@ public class LoverBot : MonoBehaviour
         }
     }
 
-
-    // Init functions
-    private void Awake()
-    {
-        _levelController = GameObject.FindObjectOfType<LevelController>() as LevelController;
-    }
-
+    // Init
     void Start()
     {
-        
+        _levelController = GameObject.FindObjectOfType<LevelController>() as LevelController;
     }
 
     // Update is called once per frame

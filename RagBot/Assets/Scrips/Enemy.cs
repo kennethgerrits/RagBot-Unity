@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private Vector3 _alignmentTopCenter;
+
     [SerializeField] private GameObject _cloudPoofPrefab;
     [SerializeField] private GameObject _gameoverPrefab;
 
@@ -15,7 +17,7 @@ public class Enemy : MonoBehaviour
         if (death)
         {
             Instantiate(_cloudPoofPrefab, transform.position, Quaternion.identity);
-            Instantiate(_gameoverPrefab, new Vector3(12, 7, -4), Quaternion.identity);
+            Instantiate(_gameoverPrefab, _alignmentTopCenter, Quaternion.identity);
             robot.gameObject.SetActive(false);
         }
     }
@@ -23,12 +25,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        _alignmentTopCenter = new Vector3(12, 7, -4);
     }
 }

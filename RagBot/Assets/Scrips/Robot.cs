@@ -14,11 +14,9 @@ public class Robot : MonoBehaviour
     private LevelController _levelController;
 
     [SerializeField] private float _launchPower = 250;
-    [SerializeField] private int _jumpPower = 2;
-    [SerializeField] private float _moveSpeed = 5f;
 
 
-    // Init functions
+    // Init
     private void Awake()
     {
         _rigidBody2D = GetComponent<Rigidbody2D>();
@@ -26,11 +24,6 @@ public class Robot : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
         _levelController = GameObject.FindObjectOfType<LevelController>() as LevelController;
         _initialPosition = transform.position;
-    }
-
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
@@ -46,20 +39,6 @@ public class Robot : MonoBehaviour
         {
             _levelController.RestartLevel();
         }
-
-        handleRobotMovement();
-    }
-
-    private void handleRobotMovement()
-    {
-        if (!_robotWasLaunched)
-            return;
-
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * _moveSpeed;
-
-        Vector3 movementV = new Vector3(0f, Input.GetAxis("Vertical") * _jumpPower, 0f);
-        transform.position += movementV * Time.deltaTime * _moveSpeed;
 
     }
 
@@ -84,7 +63,6 @@ public class Robot : MonoBehaviour
         _rigidBody2D.AddForce(directionToInitialPosition * _launchPower);
         _rigidBody2D.gravityScale = 1;
         _robotWasLaunched = true;
-
     }
 
     private void OnMouseDrag()
@@ -93,6 +71,11 @@ public class Robot : MonoBehaviour
             return;
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector3(newPosition.x, newPosition.y, 0);
+    }
+
+    public bool GetRobotLaunchStatus()
+    {
+        return _robotWasLaunched;
     }
 
 }
