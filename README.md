@@ -6,4 +6,4 @@ Controls: first drag the RagBot for the initial launch, after which you can move
 Caughtion! RagBot has infiltrated a dangerous environment, you can expect hostile company.  
 
 Play the game at: https://kennethgerrits.github.io/RagBot-Unity/    
-Playing at fullscreen is recommended.
+Playing in fullscreen is recommended.
